@@ -143,7 +143,6 @@ export default function JoinPage({ onBack }) {
   const [submitting, setSubmitting] = useState(false);
   const [applicationId, setAppId]   = useState(null);
   const [uploadedDocs, setUploaded] = useState({}); // docType → doc object
-  const [finalizing, setFinalizing] = useState(false);
 
   // ── Step 1: submit basic info ──────────────────────────────────────────────
   async function handleInfoSubmit(e) {
@@ -432,8 +431,7 @@ export default function JoinPage({ onBack }) {
             <button
               type="button"
               onClick={handleFinalize}
-              disabled={finalizing}
-              style={{
+                            style={{
                 width:        "100%",
                 padding:      ".85rem",
                 background:   "linear-gradient(135deg,#e8570a,#c44608)",
