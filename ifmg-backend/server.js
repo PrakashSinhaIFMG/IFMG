@@ -19,7 +19,7 @@ const allowedOrigins = [
   "http://localhost:3001",
   "http://localhost:3000",
   // Add your Vercel production URL after first deploy, e.g.:
-  // "https://ifmg.vercel.app",
+  "https://ifmg.vercel.app",
 ];
 
 app.use(cors({
