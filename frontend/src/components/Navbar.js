@@ -103,9 +103,9 @@ export default function Navbar({ page, goHome, onAdminClick }) {
                 {Icons.download} Install App
               </button>
             )}
-            <button className="nav-cta">
-              {Icons.phone} Call Now
-            </button>
+<a href="tel:9102469999" className="nav-cta">
+  {Icons.phone} Call Now
+</a>
           </div>
 
           <button
@@ -135,9 +135,9 @@ export default function Navbar({ page, goHome, onAdminClick }) {
               {Icons.download} Install App
             </button>
           )}
-          <button className="mobile-cta">
-            {Icons.phone} Call Now
-          </button>
+<a href="tel:9102469999" className="mobile-cta">
+  {Icons.phone} Call Now
+</a>
         </div>
       )}
     </>
