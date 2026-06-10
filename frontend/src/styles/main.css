@@ -70,7 +70,12 @@ body { font-family: var(--font); background: var(--g50); color: var(--navy); lin
 .loader-bar-wrap { width: 160px; height: 3px; background: rgba(255,255,255,.1); border-radius: 100px; overflow: hidden; }
 .loader-bar { height: 100%; background: var(--orange); border-radius: 100px; animation: loaderBar .65s ease both; }
 .loader-text { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); animation: fadeIn .3s ease .2s both; }
-
+.loader-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: loaderScale .5s ease both;
+}
 @keyframes loaderFadeOut { to { opacity: 0; visibility: hidden; } }
 @keyframes loaderScale { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: scale(1); } }
 @keyframes loaderBar { from { width: 0%; } to { width: 100%; } }
