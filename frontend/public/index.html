@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="theme-color" content="#0d1b2a"/>
+    <meta name="description" content="India's First Movers Group — Verified Packers & Movers across India"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="IFMG"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <title>IFMG — India's First Movers Group</title>
+
+    <style>
+      body { margin: 0; background: #0d1b2a; }
+
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: #0d1b2a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.75rem;
+        /* CSS-only dismiss: fade out after 2.5s, no JS needed */
+        animation: splashExit .5s ease 2.5s both;
+        pointer-events: none;
+      }
+      /* After animation completes, fully hide so React UI is clickable */
+      @keyframes splashExit {
+        0%   { opacity: 1; visibility: visible; }
+        100% { opacity: 0; visibility: hidden; }
+      }
+
+      .sp-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
+        animation: spPop .55s cubic-bezier(.34,1.56,.64,1) both;
+      }
+      .sp-icon {
+        width: 82px;
+        height: 82px;
+        background: #e8570a;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 44px rgba(232,87,10,.45);
+      }
+      .sp-icon svg {
+        width: 46px;
+        height: 46px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .sp-name {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 2.1rem;
+        color: #fff;
+        letter-spacing: -.01em;
+        text-align: center;
+      }
+      .sp-name span { color: #e8570a; }
+      .sp-tag {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.3);
+        margin-top: -.6rem;
+        text-align: center;
+      }
+      .sp-bar-wrap {
+        width: 150px;
+        height: 3px;
+        background: rgba(255,255,255,.1);
+        border-radius: 100px;
+        overflow: hidden;
+      }
+      .sp-bar {
+        height: 100%;
+        background: #e8570a;
+        border-radius: 100px;
+        /* Bar fills over 2s, then splash fades at 2.5s */
+        animation: spBar 2s ease both;
+      }
+
+      @keyframes spPop { from { opacity:0; transform:scale(.82); } to { opacity:1; transform:scale(1); } }
+      @keyframes spBar { from { width:0%; } to { width:100%; } }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- SPLASH — dismisses itself via CSS after 2.5s, no JS required -->
+    <div id="splash">
+      <div class="sp-logo">
+        <div class="sp-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13" rx="1"/>
+            <path d="M16 8h4l3 3v5h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="sp-name">IFM<span>G</span></div>
+          <div class="sp-tag">India's First Movers Group</div>
+        </div>
+      </div>
+      <div class="sp-bar-wrap">
+        <div class="sp-bar"></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('%PUBLIC_URL%/service-worker.js')
+            .catch(function (err) {
+              console.log('SW registration skipped:', err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
