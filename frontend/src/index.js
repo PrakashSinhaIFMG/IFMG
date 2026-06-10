@@ -9,3 +9,15 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Unregister all old service workers, then register fresh
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    Promise.all(registrations.map((reg) => reg.unregister())).then(() => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(() => console.log('SW registered'))
+        .catch((err) => console.log('SW error:', err));
+    });
+  });
+}

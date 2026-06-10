@@ -9,6 +9,10 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="apple-mobile-web-app-title" content="IFMG"/>
+    <!-- Add these inside <head> after your existing metas -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     <title>IFMG — India's First Movers Group</title>
@@ -124,17 +128,5 @@
     </div>
 
     <div id="root"></div>
-
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker
-            .register('%PUBLIC_URL%/service-worker.js')
-            .catch(function (err) {
-              console.log('SW registration skipped:', err);
-            });
-        });
-      }
-    </script>
   </body>
 </html>
