@@ -612,6 +612,7 @@ body { font-family: var(--font); background: var(--g50); color: var(--navy); lin
   .bottom-nav { display: flex; }
   .page { padding-bottom: 62px; }
   .admin-wrap { min-height: calc(100vh - 62px); }
+  .footer { display: none; }
 }
 .bn-item {
   display: flex; flex-direction: column; align-items: center; gap: 3px;
