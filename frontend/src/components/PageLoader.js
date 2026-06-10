@@ -1,5 +1,3 @@
-import { Icons } from "./Icons";
-
 export default function PageLoader() {
   return (
     <div className="page-loader">
